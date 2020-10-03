@@ -12,9 +12,9 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     <form action="{{ route('tema.atualizar', $tema->id) }}" method="post">
@@ -22,15 +22,18 @@
                         <input type="hidden" name="_method" value="put">
                         <div class="form-group">
                             <label for="nome">Nome</label>
-                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome do tema" value="{{$tema->nome}}">
+                            <input type="text" name="nome" id="nome" class="form-control" placeholder="Nome do tema"
+                                value="{{$tema->nome}}">
                         </div>
                         <div class="form-group">
                             <label for="valorAluguel">Valor do Aluguel</label>
-                            <input type="number" step="0.01" min="100" max="5000" name="valorAluguel" id="valorAluguel" class="form-control" placeholder="000,00" value="{{$tema->valorAluguel}}">
+                            <input type="number" step="0.01" min="100" max="5000" name="valorAluguel" id="valorAluguel"
+                                class="form-control" placeholder="000,00" value="{{$tema->valorAluguel}}">
                         </div>
                         <div class="form-group">
                             <label for="corDestaque">Cor de Destaque</label>
-                            <input type="text" name="corDestaque" id="corDestaque" class="form-control" placeholder="Cor de Destaque" value="{{$tema->corDestaque}}">
+                            <input type="text" name="corDestaque" id="corDestaque" class="form-control"
+                                placeholder="Cor de Destaque" value="{{$tema->corDestaque}}">
                         </div>
                         <button class="btn btn-info">Atualizar</button>
                     </form>

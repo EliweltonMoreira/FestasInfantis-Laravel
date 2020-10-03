@@ -12,9 +12,9 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     <p><b>Tema: </b>{{ $tema->nome }}</p>
@@ -39,7 +39,8 @@
                                 <td>{{ $item->descricao }}</td>
                                 <td>
                                     <a class="btn btn-dark" href="{{ route('item.editar', $item->id) }}">Editar</a>
-                                    <a class="btn btn-danger" href="javascript:(confirm('Deletar esse registro?') ? window.location.href='{{ route('item.deletar', $item->id) }}' : false)">Deletar</a>
+                                    <a class="btn btn-danger"
+                                        href="javascript:(confirm('Deletar esse registro?') ? window.location.href='{{ route('item.deletar', $item->id) }}' : false)">Deletar</a>
                                 </td>
                             </tr>
                             @endforeach

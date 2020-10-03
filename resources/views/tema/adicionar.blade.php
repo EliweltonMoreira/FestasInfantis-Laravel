@@ -12,9 +12,9 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     <form action="{{ route('tema.salvar') }}" method="post">
@@ -25,11 +25,13 @@
                         </div>
                         <div class="form-group">
                             <label for="valorAluguel">Valor do Aluguel</label>
-                            <input type="number" step="0.01" min="100" max="5000" name="valorAluguel" id="valorAluguel" class="form-control" placeholder="000,00">
+                            <input type="number" step="0.01" min="100" max="5000" name="valorAluguel" id="valorAluguel"
+                                class="form-control" placeholder="000,00">
                         </div>
                         <div class="form-group">
                             <label for="corDestaque">Cor de Destaque</label>
-                            <input type="text" name="corDestaque" id="corDestaque" class="form-control" placeholder="Cor de Destaque">
+                            <input type="text" name="corDestaque" id="corDestaque" class="form-control"
+                                placeholder="Cor de Destaque">
                         </div>
                         <button class="btn btn-info">Adicionar</button>
                     </form>

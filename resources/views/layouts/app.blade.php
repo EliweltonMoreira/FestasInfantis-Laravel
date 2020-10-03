@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,20 +20,21 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+
 <body>
     <div id="app">
         @include('layouts._includes._nav')
 
         @if(Session::has('flash_message'))
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-10">
-                        <div align="center" class="alert {{ Session::get('flash_message')['class'] }}">
-                            {{ Session::get('flash_message')['msg'] }}
-                        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div align="center" class="alert {{ Session::get('flash_message')['class'] }}">
+                        {{ Session::get('flash_message')['msg'] }}
                     </div>
                 </div>
             </div>
+        </div>
         @endif
 
         <main class="py-4">
@@ -40,4 +42,5 @@
         </main>
     </div>
 </body>
+
 </html>

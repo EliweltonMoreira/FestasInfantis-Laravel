@@ -11,9 +11,9 @@
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
                     @endif
 
                     <p>
@@ -33,17 +33,18 @@
 
                         <tbody>
                             @foreach($temas as $tema)
-                                <tr>
-                                    <th scope="row">{{ $tema->id }}</th>
-                                    <td>{{ $tema->nome }}</td>
-                                    <td>{{ $tema->valorAluguel }}</td>
-                                    <td>{{ $tema->corDestaque }}</td>
-                                    <td>
-                                        <a class="btn btn-dark" href="{{route('tema.detalhe', $tema->id)}}">Detalhe</a>
-                                        <a class="btn btn-dark" href="{{route('tema.editar', $tema->id)}}">Editar</a>
-                                        <a class="btn btn-danger" href="javascript:(confirm('Deletar esse registro?') ? window.location.href='{{route('tema.deletar', $tema->id)}}' : false)">Deletar</a>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <th scope="row">{{ $tema->id }}</th>
+                                <td>{{ $tema->nome }}</td>
+                                <td>{{ $tema->valorAluguel }}</td>
+                                <td>{{ $tema->corDestaque }}</td>
+                                <td>
+                                    <a class="btn btn-dark" href="{{route('tema.detalhe', $tema->id)}}">Detalhe</a>
+                                    <a class="btn btn-dark" href="{{route('tema.editar', $tema->id)}}">Editar</a>
+                                    <a class="btn btn-danger"
+                                        href="javascript:(confirm('Deletar esse registro?') ? window.location.href='{{route('tema.deletar', $tema->id)}}' : false)">Deletar</a>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
